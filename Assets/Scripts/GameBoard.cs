@@ -64,6 +64,7 @@ public class GameBoard : MonoBehaviour {
 					} 
 
 					n++;
+
 				} while (pieceCount [tilePrefabs [choice].name] <= 0 && n < 50);
 
 
@@ -74,6 +75,7 @@ public class GameBoard : MonoBehaviour {
 					tempPieceComponent.MyNumber = gameTileNumbers [gtn];
 					gtn++;
 				}
+				tempPiece.transform.SetParent (gameObject.transform);
 				gameTiles.Add (location.gameObject.name, tempPiece);
 
 			}

@@ -22,8 +22,7 @@ public class WaterGameBoard : MonoBehaviour {
 		foreach (Transform location in tileLocations) {
 			if (location.gameObject.name != "Water Tiles") {
 				GameObject tempTile = (GameObject)Instantiate (tilePrefabs [0], location.position, Quaternion.identity);
-				Debug.Log ("Name: " + location.gameObject.name);
-				Debug.Log ("Temp tile: " + tempTile.ToString());
+				tempTile.transform.SetParent (gameObject.transform);
 
 
 				gameTiles.Add (location.gameObject.name, tempTile);

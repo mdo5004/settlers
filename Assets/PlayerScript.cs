@@ -14,9 +14,8 @@ public Dictionary<string, Card> resourceCards;
 public Dictionary<string, Card> developmentCards;
 
 
-
-public bool canBuildRoad;
-public bool canBuildSettlement;
+public bool canBuildRoad = true;
+public bool canBuildSettlement = true;
 public bool canBuildCity;
 public bool canBuyDevelopmentCard;
 
@@ -39,17 +38,9 @@ public bool canBuyDevelopmentCard;
 		}
 	}
 	
-	// Update is called once per frame
-	void Update ()
-	{
-		if (isMyTurn) {
-			
 
 
-		}
-	}
-
-	void WhatCanIAfford() {
+	public void WhatCanIAfford() {
 		if (availablePieces ["Road"] > 0 && resourceCards ["Brick"].quantity > 0 && resourceCards ["Lumber"].quantity > 0) {
 				canBuildRoad = true;
 			} else {
@@ -74,5 +65,7 @@ public bool canBuyDevelopmentCard;
 				canBuyDevelopmentCard = false;
 			}
 	}
+
+
 
 }
